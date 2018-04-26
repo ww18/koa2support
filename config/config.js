@@ -16,6 +16,6 @@ var CONFIG = new Map(); /**
 
 CONFIG.set('port', 3000);
 CONFIG.set('viewDir', _path2.default.join(__dirname, '..', 'views'));
-CONFIG.set('staticDir', _path2.default.join(__dirname, '..', 'public'));
+CONFIG.set('staticDir', _path2.default.join(__dirname, '..', './'));
 
 exports.default = CONFIG;

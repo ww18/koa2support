@@ -2,8 +2,8 @@ var gulp = require('gulp'),
     babel = require("gulp-babel");
 
 var paths = {
-  scripts: ["config/*.es6", "controller/*.es6", "model/*.es6", "public/js/*.js", "app.es6"],
-  dest: ["config/", "controller/", "model/", "public/dist/", ""]
+  scripts: ["config/*.es6", "controller/*.es6", "model/*.es6", "app.es6"],
+  dest: ["config/", "controller/", "model/", ""]
 };
 
 gulp.task('default', function(){

@@ -1,8 +1,10 @@
 /**
  * Created by ww on 2018/3/27.
  */
-class PraiseButton{
+//import xtag from 'x-tag';
+class PraiseButton extends XTagElement{
     constructor(){
+        super();
         this.html = '';
         this.createEle();
     }
