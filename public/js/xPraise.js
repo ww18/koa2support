@@ -3,20 +3,21 @@
  */
 import XTagPraise from './Thumb.js';
 //import css from '../css/index.css';
-xtag.create('x-praise', class CC extends XTagPraise{
-    connectedCallback () {
-        this.start();
-    }
-    start (){
-        this.appendChild(this.container);
-    }
-    stop (){
-
-    }
-    update (){
-
-    }
-    'click::event' (){
-        this.addAnimation();
+xtag.register('x-praise', {
+    prototype: XTagPraise.prototype,
+    lifecycle: {
+        created: function(){
+            this.start();
+        }
+    },
+    methods: {
+        start: function(){
+            this.appendChild(this.container);
+        }
+    },
+    events: {
+        click(){
+            this.addAnimation();
+        }
     }
 });
