@@ -1,10 +1,10 @@
 /**
  * Created by ww on 2018/4/26.
  */
-import XTagPraise from './Thumb.js';
+import xPraiseButton from './PraiseButton.js';
 //import css from '../css/index.css';
 xtag.register('x-praise', {
-    prototype: XTagPraise.prototype,
+    prototype: xPraiseButton.prototype,
     lifecycle: {
         created: function(){
             this.start();
