@@ -13,6 +13,13 @@ gulp.task('praise', function(){
         .pipe(gulp.dest(paths.dest[i]));
   })
 })
+
+gulp.task('praiseAll', function(){
+  gulp.src(['**/*.es6',"!public/**/*"])
+      .pipe(babel())
+      .pipe(gulp.dest("./server"));
+})
+
 gulp.task('default', ['praise'],()=>{
     gulp.watch(paths.scripts, ['praise']);
 })
