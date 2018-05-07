@@ -5,17 +5,15 @@
 {% endblock %}
 
 {% block head %}
-
-<link rel="stylesheet" type="text/css" href="/dist/bundle.css?v=000448127a5631125411">
-
+<% for (var css in htmlWebpackPlugin.files.css) { %>
+<link rel="stylesheet" type="text/css" href="<%=htmlWebpackPlugin.files.css[css] %>">
+<% } %>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://cdn.bootcss.com/x-tag/1.5.11/x-tag-core.js"></script>
-
-<script src="/dist/manifest.js?v=000448127a5631125411"></script>
-
-<script src="/dist/app.js?v=000448127a5631125411"></script>
-
+<% for (var js in htmlWebpackPlugin.files.js) { %>
+<script src="<%=htmlWebpackPlugin.files.js[js] %>"></script>
+<% } %>
 {% endblock %}
 
 {% block content %}

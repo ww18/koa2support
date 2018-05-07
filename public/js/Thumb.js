@@ -5,13 +5,14 @@ class Thumb extends PraiseButton{
         super();
         this.opt = opt;
         this.clickNum = 0;
+        this.container = '';
         this.numHtml = document.createElement('div');
         this.numHtml.className = 'support-number';
         //this.numHtml.innerHTML = this.clickNum;
         this.init();
     }
     init(){
-        const container = document.querySelector(this.opt.container);
+        const container = document.createElement('div');
         if(container){
             container.appendChild(this.numHtml);
             container.appendChild(this.html);
@@ -19,7 +20,7 @@ class Thumb extends PraiseButton{
                 this.opt.callback();
             })
         }
-        return this;
+        this.container = container;
     }
     addAnimation(){
         let ani = document.createElement('div');
