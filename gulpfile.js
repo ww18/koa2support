@@ -6,11 +6,14 @@ var paths = {
   dest: ["config/", "controller/", "model/", ""]
 };
 
-gulp.task('default', function(){
+gulp.task('praise', function(){
   paths.scripts.forEach(function(item, i){
     return gulp.src(item)
         .pipe(babel())
         .pipe(gulp.dest(paths.dest[i]));
   })
+})
+gulp.task('default', ['praise'],()=>{
+    gulp.watch(paths.scripts, ['praise']);
 })
 
