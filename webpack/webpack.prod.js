@@ -31,14 +31,14 @@ module.exports = {
             publicPath:'/dist'
         }),
         new CommonsChunkPlugin({
-            name:['vendor','manifest'],
+            name:['manifest'],
             minChunks: Infinity
         }),
         new HtmlWebpackPlugin({
             template:resolve('../views/index.template.html'),
             filename:resolve('../views/index.html'),
             inject: false,
-            chunks:['manifest','app','vendor'],
+            chunks:['manifest','app'],
             hash: false
         }),
         new UglifyJsPlugin({
