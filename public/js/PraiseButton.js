@@ -42,9 +42,6 @@ var xPraiseButton = xtag.register('x-praiseButton', {
             if(container){
                 container.appendChild(this.numHtml);
                 container.appendChild(this.html);
-                this.html.addEventListener('click',()=>{
-                    this.opt.callback();
-                })
             }
             this.container = container;
         }

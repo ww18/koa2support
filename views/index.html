@@ -6,25 +6,26 @@
 
 {% block head %}
 
-<link rel="stylesheet" type="text/css" href="/public/css/index.css">
-<script src="https://cdn.bootcss.com/systemjs/0.21.0/system.js"></script>
+<link rel="stylesheet" type="text/css" href="/dist/bundle.css?v=000448127a5631125411">
+
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://cdn.bootcss.com/x-tag/1.5.11/x-tag-core.js"></script>
 
-<script src="/dist/app.js?v=326b6a544b34e48af411"></script>
+<script src="/dist/manifest.js?v=000448127a5631125411"></script>
+
+<script src="/dist/app.js?v=000448127a5631125411"></script>
 
 {% endblock %}
 
 {% block content %}
-<form method="get" action="/addSupport">
+<form method="get" action="/index/update">
     用户名：<input type="text" name="username" id="username" value="{{username}}" /><br/>
     点击数：<input type="text" name="num" id="num" value="{{num}}" />
     <input type="submit" value="提交">
 </form>
 <x-clock></x-clock>
 <x-praise></x-praise>
-<div class="support-background"></div>
 <script>
 //    var thumb = null;
 //    function clickFn(){
@@ -55,25 +56,6 @@
 //        thumb = $.Thumb(opt);
 //    });
 
-//    xtag.create('x-clock', class extends XTagElement {
-//        connectedCallback () {
-//            this.start();
-//        }
-//        start (){
-//            this.update();
-//            this._interval = setInterval(() => this.update(), 1000);
-//        }
-//        stop (){
-//            this._interval = clearInterval(this._data.interval);
-//        }
-//        update (){
-//            this.textContent = new Date().toLocaleTimeString();
-//        }
-//        'tap::event' (){
-//            if (this._interval) this.stop();
-//            else this.start();
-//        }
-//    });
 </script>
 
 {% endblock %}
