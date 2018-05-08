@@ -8,9 +8,19 @@ cache:
 script:
   - npm run webpackprod
   - gulp praise
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: "8f60f3aa9379b93d3cead2b97786ca787d1eb0f8" # Set in travis-ci.org dashboard
-  on:
-    branch: master
+
+after_script:
+  - git init
+  - git config user.name "ww"
+  - git config user.email "476848607@qq.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+# E: Build LifeCycle
+
+branches:
+  only:
+    - master
+env:
+ global:
+   - GH_REF: https://github.com/ww18/koa2support.git
