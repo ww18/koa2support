@@ -15,6 +15,4 @@ branches:
 env:
   global:
   - GH_REF: github.com/ww18/koa2support.git
-before_install:
-- openssl aes-256-cbc -K $encrypted_d7a4938d016d_key -iv $encrypted_d7a4938d016d_iv
-  -in travis_deploy.enc -out travis_deploy -d
+
