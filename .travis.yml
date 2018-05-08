@@ -23,4 +23,4 @@ branches:
     - master
 env:
  global:
-   - GH_REF: https://github.com/ww18/koa2support.git
+   - GH_REF: github.com/ww18/koa2support.git
