@@ -67,7 +67,7 @@ var indexController = {
                                 //ctx.body = req;
                                 if (req) {
                                     //console.log(data);
-                                    ctx.redirect('/index/index?username=' + data.username + '&num=' + data.num);
+                                    ctx.redirect('/?username=' + data.username + '&num=' + data.num);
                                     //ctx.body = req;
                                 }
                                 //ctx.body = ctx.query.username + ctx.query.num;

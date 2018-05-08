@@ -14,7 +14,7 @@ var initController = {
     init: function init(app, router) {
 
         //路由
-        router.get('/index/index', _indexController2.default.index());
+        router.get('/', _indexController2.default.index());
 
         //地址
         router.get('/index/update', _indexController2.default.update());

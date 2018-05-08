@@ -7,7 +7,7 @@ var initController = {
 
 
         //路由
-        router.get('/index/index', indexController.index());
+        router.get('/', indexController.index());
 
 
         //地址

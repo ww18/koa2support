@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "8"
+install: cnpm install
+script:
+  - npm run webpackprod
+  - gulp praise
+  - node app.js
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: 8f60f3aa9379b93d3cead2b97786ca787d1eb0f8 # Set in travis-ci.org dashboard
+  on:
+    branch: master
