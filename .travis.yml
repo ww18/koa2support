@@ -5,7 +5,6 @@ install: npm install
 script:
   - npm run webpackprod
   - gulp praise
-  - node app.js
 deploy:
   provider: pages
   skip_cleanup: true
