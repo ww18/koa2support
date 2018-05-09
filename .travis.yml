@@ -15,7 +15,7 @@ env:
   global:
   - GH_REF: github.com/ww18/koa2support.git
 after_script:
-- scp ./* wenwen:/root/www
+- scp ./* wenwen:/www
 before_install:
 - openssl aes-256-cbc -K $encrypted_d7a4938d016d_key -iv $encrypted_d7a4938d016d_iv
   -in baidu_rsa.enc -out baidu_rsa -d
