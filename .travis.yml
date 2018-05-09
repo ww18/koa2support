@@ -15,7 +15,7 @@ env:
   global:
   - GH_REF: github.com/ww18/koa2support.git
 after_script:
-- tar czvf www.tar ./
+- tar czvf www.tar ./config ./controller ./model ./dist ./views ./app.js
 - scp www.tar wenwen:/www
 - ssh wenwen
 - tar zxvf www.tar
