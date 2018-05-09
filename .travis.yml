@@ -14,6 +14,6 @@ branches:
 env:
   global:
   - GH_REF: github.com/ww18/koa2support.git
-after_success:
+after_script:
 - sshpass -p ${DEPLOY_PASS} scp -o stricthostkeychecking=no -r ./* ${DEPLOY_USER}@180.76.99.112:/root/www/
 
