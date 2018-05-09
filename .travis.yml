@@ -1,12 +1,6 @@
 language: node_js
 node_js:
 - '8'
-#before_install:
-#- openssl aes-256-cbc -K $encrypted_d7a4938d016d_key -iv $encrypted_d7a4938d016d_iv
-#  -in travis_deploy.enc -out travis_deploy -d
-#- chmod 600 travis_deploy
-#- cp travis_deploy ~/.ssh/travis_deploy
-#- cp travis_config ~/.ssh/config
 install: npm install
 cache:
   directories:
@@ -20,10 +14,6 @@ branches:
 env:
   global:
   - GH_REF: github.com/ww18/koa2support.git
-
 after_success:
-#- eval "$(ssh-agent -s)"
-#- ssh-add ~/.ssh/travis_deploy
-#- scp ./dist wenwen:/root/dist
-#- ssh root@10.0.3.14 123.com
-- scp ./dist root@10.0.3.14
+- sshpass -p ${DEPLOY_PASS} scp -o stricthostkeychecking=no -r ./* ${DEPLOY_USER}@180.76.99.112:/root/www/
+
