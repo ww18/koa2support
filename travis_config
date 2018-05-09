@@ -1,0 +1,11 @@
+User root
+Host wenwen
+HostName 192.168.4.68
+Port 22
+StrictHostKeyChecking no
+IdentityFile ~/.ssh/travis_deploy
+IdentitiesOnly yes
+Protocol 2
+ServerAliveInterval 60
+ServerAliveCountMax 20
+LogLevel INFO
