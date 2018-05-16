@@ -6,14 +6,13 @@
 
 {% block head %}
 
-<link rel="stylesheet" type="text/css" href="/dist/bundle.css?v=7621901d84267edae272">
+<link rel="stylesheet" type="text/css" href="/dist/bundle.css?v=94d3ba6d38ac8113c17d">
 
-
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 <script src="https://cdn.bootcss.com/x-tag/1.5.11/x-tag-core.js"></script>
 
-<script src="/dist/manifest.js?v=7621901d84267edae272"></script>
-
-<script src="/dist/app.js?v=7621901d84267edae272"></script>
+<script src="/dist/app.js?v=94d3ba6d38ac8113c17d"></script>
 
 {% endblock %}
 
@@ -23,9 +22,15 @@
     点击数：<input type="text" name="num" id="num" value="{{num}}" />
     <input type="submit" value="提交">
 </form>
-<x-clock></x-clock>
-<x-praise></x-praise>
+<a href="/praise">praise</a>
+<a href="/star">star</a>
+<div id="xtagContainer">
+    {% autoescape false %}
+    {{container}}
+    {% endautoescape %}
+</div>
 <script>
+    $(document).pjax('a', '#xtagContainer');
 //    var thumb = null;
 //    function clickFn(){
 //        $('#num').val(parseInt($('#num').val())+1);

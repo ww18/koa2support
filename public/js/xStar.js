@@ -3,7 +3,7 @@
  */
 import xCommon from './common.js';
 
-xtag.register('x-praise', {
+xtag.register('x-star', {
     prototype: xCommon.prototype,
     lifecycle: {
         created: function(){

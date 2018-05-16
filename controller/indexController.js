@@ -46,23 +46,105 @@ var indexController = {
             };
         }();
     },
-    update: function update() {
+    praise: function praise() {
         var _this2 = this;
 
         return function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(ctx, next) {
-                var data, indexM, req;
+                var data;
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
                         switch (_context2.prev = _context2.next) {
                             case 0:
                                 data = ctx.query;
+
+                                if (!ctx.request.header["x-pjax"]) {
+                                    _context2.next = 5;
+                                    break;
+                                }
+
+                                ctx.body = '<x-praise></x-praise>';
+                                _context2.next = 8;
+                                break;
+
+                            case 5:
+                                _context2.next = 7;
+                                return ctx.render('index.html', { container: '<x-praise></x-praise>' });
+
+                            case 7:
+                                ctx.body = _context2.sent;
+
+                            case 8:
+                            case 'end':
+                                return _context2.stop();
+                        }
+                    }
+                }, _callee2, _this2);
+            }));
+
+            return function (_x3, _x4) {
+                return _ref2.apply(this, arguments);
+            };
+        }();
+    },
+    star: function star() {
+        var _this3 = this;
+
+        return function () {
+            var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(ctx, next) {
+                var data;
+                return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                    while (1) {
+                        switch (_context3.prev = _context3.next) {
+                            case 0:
+                                data = ctx.query;
+
+                                if (!ctx.request.header["x-pjax"]) {
+                                    _context3.next = 5;
+                                    break;
+                                }
+
+                                ctx.body = '<x-star></x-star>';
+                                _context3.next = 8;
+                                break;
+
+                            case 5:
+                                _context3.next = 7;
+                                return ctx.render('index.html', { container: '<x-star></x-star>' });
+
+                            case 7:
+                                ctx.body = _context3.sent;
+
+                            case 8:
+                            case 'end':
+                                return _context3.stop();
+                        }
+                    }
+                }, _callee3, _this3);
+            }));
+
+            return function (_x5, _x6) {
+                return _ref3.apply(this, arguments);
+            };
+        }();
+    },
+    update: function update() {
+        var _this4 = this;
+
+        return function () {
+            var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(ctx, next) {
+                var data, indexM, req;
+                return regeneratorRuntime.wrap(function _callee4$(_context4) {
+                    while (1) {
+                        switch (_context4.prev = _context4.next) {
+                            case 0:
+                                data = ctx.query;
                                 indexM = new _indexmodel2.default(ctx);
-                                _context2.next = 4;
+                                _context4.next = 4;
                                 return indexM.updateNum(data);
 
                             case 4:
-                                req = _context2.sent;
+                                req = _context4.sent;
 
                                 //ctx.body = req;
                                 if (req) {
@@ -74,14 +156,14 @@ var indexController = {
 
                             case 6:
                             case 'end':
-                                return _context2.stop();
+                                return _context4.stop();
                         }
                     }
-                }, _callee2, _this2);
+                }, _callee4, _this4);
             }));
 
-            return function (_x3, _x4) {
-                return _ref2.apply(this, arguments);
+            return function (_x7, _x8) {
+                return _ref4.apply(this, arguments);
             };
         }();
     }

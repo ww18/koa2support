@@ -13,7 +13,7 @@ function resolve(file){
 module.exports = {
     devtool:'eval-source-map',
     entry:{
-        app:resolve('../public/js/xPraise.js')
+        app:resolve('../public/js/app.js')
     },
     output:{
         path:resolve('../dist/'),

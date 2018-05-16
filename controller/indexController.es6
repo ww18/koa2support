@@ -9,6 +9,27 @@ const indexController = {
             ctx.body = await ctx.render('index.html', data);
         }
     },
+    praise(){
+        return async (ctx, next)=> {
+            const data = ctx.query;
+            if(ctx.request.header["x-pjax"]){
+                ctx.body = '<x-praise></x-praise>';
+            }else{
+                ctx.body = await ctx.render('index.html', {container:'<x-praise></x-praise>'});
+            }
+        }
+    },
+    star(){
+        return async (ctx, next)=> {
+            const data = ctx.query;
+            if(ctx.request.header["x-pjax"]){
+                ctx.body = '<x-star></x-star>';
+            }else{
+                ctx.body = await ctx.render('index.html', {container:'<x-star></x-star>'});
+            }
+
+        }
+    },
     update(){
 
         return async(ctx,next)=>{

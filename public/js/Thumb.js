@@ -1,8 +1,8 @@
-import PraiseButton from './PraiseButton.js';
+//import PraiseButton from './PraiseButton.js';
 
 class Thumb extends PraiseButton{
     constructor(opt){
-        super();
+        //super();
         this.opt = opt;
         this.clickNum = 0;
         this.container = '';
