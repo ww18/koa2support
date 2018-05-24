@@ -37,8 +37,6 @@ body{
       flex-basis: calc((100% / var(--columns)) * #{$i});
     }
   }
-
-
 }
 
 .demo{
@@ -47,4 +45,46 @@ body{
   text-align: center;
   color: #fff;
   line-height: 3em;
+  & a{
+    background: #000;
+  }
+}
+
+.reflection {
+  position: relative;
+  width: 300px;
+  height: 215px;
+  margin: 50px auto;
+}
+.reflection-text {
+  font: 1.2em sans-serif;
+  position: absolute;
+  right: 0; bottom: 20px;
+  margin: 0;
+  padding: 10px;
+  background: rgba(255,255,255,.6);
+  color: #000;
+  transition: padding .3s;
+}
+.reflection:hover .reflection-text {
+  padding-right: 50px;
+}
+
+/* reflection the standard way (detecting support) */
+@supports (background: -moz-element(#css-element)) {
+  .reflection::after{
+    content: '';
+    position: absolute;
+    left: 0; top: 100%;
+    width: inherit; height: inherit;
+    background: -moz-element(#css-element);
+    transform: scaleY(-1);
+    mask: url('#mask');
+    opacity: .3;
+  }
+}
+
+/* reflection the old WebKit way */
+.reflection {
+  -webkit-box-reflect: below 0 linear-gradient(transparent 50%, rgba(0,0,0,.3));
 }
