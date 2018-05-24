@@ -1,5 +1,7 @@
 var gulp = require('gulp'),
-    babel = require("gulp-babel");
+    babel = require("gulp-babel"),
+    sass = require('gulp-sass');
+var postcss = require('gulp-postcss');
 
 var paths = {
   scripts: ["config/*.es6", "controller/*.es6", "model/*.es6", "app.es6"],
@@ -24,3 +26,10 @@ gulp.task('default', ['praise'],()=>{
     gulp.watch(paths.scripts, ['praise']);
 })
 
+gulp.task('sass', function () {
+
+  return gulp.src('./public/sass/*.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(postcss())
+      .pipe(gulp.dest('./public/css'));
+});

@@ -1,0 +1,50 @@
+
+:root{
+  --color: #0C3934;
+  --bg: #fff;
+
+  /* Grid */
+  --gutter: 10px;
+  --columns: 12;
+}
+
+body{
+  background-color: var(--bg);
+  font: normal 1em/1.5 "Roboto", sans-serif
+}
+
+.container {
+  max-width: 1140px;
+  margin: 3em auto;
+  padding: var(--gutter);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(var(--gutter) - ( var(--gutter) * 2) ) 20px;
+}
+
+[class*="m--"]{
+  @for $i from 1 through 12 {
+    &.m--#{$i} {
+      padding-right: calc(var(--gutter));
+      padding-left: calc(var(--gutter));
+      flex-basis: calc((100% / var(--columns)) * #{$i});
+    }
+  }
+
+
+}
+
+.demo{
+  display: block;
+  background-color: var(--color);
+  text-align: center;
+  color: #fff;
+  line-height: 3em;
+}
